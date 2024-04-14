@@ -15,7 +15,7 @@ For Senior Citizens:
       2. Update Contacts: Enables adding or deleting emergency contacts for senior citizens.
       3. Update Medication Reminders: Allows setting or updating medication reminders for senior citizens.
 
-USER INTERFACE
+USER INTERFACE - https://www.figma.com/file/eQ8LYNrClYcC3vSsMOE0uM/SaharaApp?type=design&node-id=0%3A1&mode=design&t=rkLBoaHeiJqO5tFU-1
 
 ![image](https://github.com/rushika-j/Tech-Tesseract/assets/138696145/0ecca5f0-db11-48eb-8cfb-1449b2a65ac2)
 ![image](https://github.com/rushika-j/Tech-Tesseract/assets/138696145/300123b9-bbd4-4c7c-a4d4-cef6e828776d)
