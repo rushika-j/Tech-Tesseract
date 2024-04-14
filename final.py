@@ -65,12 +65,13 @@ class SeniorSafetyApp:
         self.emergency_contacts = []
         self.check_in_button = None
         self.check_in_thread = None
+        self.medication_reminders = {}  # Dictionary to store medication reminders
 
         # Create GUI elements based on user type
         if self.user_type == "senior":
             self.create_emergency_sos_button()
             self.create_emergency_contacts()
-            self.create_medication_reminder_button()
+            self.create_medication_reminders()  # New method call
         elif self.user_type == "guardian":
             self.create_check_in_feature()
             self.create_medication_reminders()
@@ -84,11 +85,6 @@ class SeniorSafetyApp:
         medication_button = tk.Button(self.master, text="Medication Reminders", command=self.open_medication_reminders,
                                       bg="blue", fg="white", font=("Helvetica", 16))
         medication_button.pack(pady=5)
-
-    def create_medication_reminder_button(self):
-        reminder_button = tk.Button(self.master, text="Reminders", command=self.show_medication_reminders,
-                                      bg="green", fg="white", font=("Helvetica", 16))
-        reminder_button.pack(pady=5)
 
     def create_check_in_feature(self):
         check_in_frame = tk.Frame(self.master)
@@ -115,19 +111,28 @@ class SeniorSafetyApp:
         messagebox.showinfo("Emergency Alert", "Emergency SOS signal sent to contacts!")
 
     def open_medication_reminders(self):
-        ailment_name = simpledialog.askstring("Medication Reminder", "Enter Ailment Name:")
-        medicine_name = simpledialog.askstring("Medication Reminder", "Enter Medicine Name:")
-        dosage_per_day = simpledialog.askinteger("Medication Reminder", "Enter Dosage per Day:")
-        quantity = simpledialog.askinteger("Medication Reminder", "Enter Quantity:")
-        reminder_everyday = messagebox.askyesno("Medication Reminder", "Set Reminder for Everyday?")
-
-        if ailment_name and medicine_name and dosage_per_day and quantity:
-            reminder_message = f"Ailment: {ailment_name}\nMedicine: {medicine_name}\nDosage per Day: {dosage_per_day}\nQuantity: {quantity}"
-            if reminder_everyday:
-                reminder_message += "\nReminder set for everyday."
+        reminder_message = ""
+        if self.user_type == "senior":
+            if self.medication_reminders:
+                for name, reminder in self.medication_reminders.items():
+                    reminder_message += f"\n{name}:\n{reminder}"
             else:
-                reminder_message += "\nReminder not set for everyday."
-            messagebox.showinfo("Medication Reminder", reminder_message)
+                reminder_message = "No medication reminders set."
+            messagebox.showinfo("Medication Reminders", reminder_message)
+        elif self.user_type == "guardian":
+            ailment_name = simpledialog.askstring("Medication Reminder", "Enter Ailment Name:")
+            medicine_name = simpledialog.askstring("Medication Reminder", "Enter Medicine Name:")
+            dosage_per_day = simpledialog.askinteger("Medication Reminder", "Enter Dosage per Day:")
+            quantity = simpledialog.askinteger("Medication Reminder", "Enter Quantity:")
+            reminder_everyday = messagebox.askyesno("Medication Reminder", "Set Reminder for Everyday?")
+            if ailment_name and medicine_name and dosage_per_day and quantity:
+                reminder_message = f"Ailment: {ailment_name}\nMedicine: {medicine_name}\nDosage per Day: {dosage_per_day}\nQuantity: {quantity}"
+                if reminder_everyday:
+                    reminder_message += "\nReminder set for everyday."
+                else:
+                    reminder_message += "\nReminder not set for everyday."
+                self.medication_reminders[medicine_name] = reminder_message
+                messagebox.showinfo("Medication Reminder", "Medication reminder set successfully.")
 
     def open_emergency_contacts(self):
         contact_window = tk.Toplevel(self.master)
