@@ -1,5 +1,6 @@
 # Tech-Tesseract
-The Senior Safety App is a desktop application built using Python and Tkinter GUI library. It provides features for both senior citizens and their guardians or caretakers to ensure their safety and well-being.
+In today's fast-paced and increasingly digital world, the need for comprehensive safety solutions for senior citizens has become more crucial than ever before. Sahara, the Safety Companion for Senior Citizens, addresses the unique challenges faced by elderly individuals living alone or with limited assistance.
+The Senior Safety App "SAHARA" is a desktop application built using Python and Tkinter GUI library. It provides features for both senior citizens and their guardians or caretakers to ensure their safety and well-being.
 
 Features
 For Senior Citizens:
