@@ -4,16 +4,22 @@ The Senior Safety App is a desktop application built using Python and Tkinter GU
 Features
 For Senior Citizens:
 
-      1.  Emergency SOS: Allows senior citizens to trigger an emergency alert signal sent to predefined emergency contacts.
-      2.  Emergency Contacts: Provides quick access to emergency contacts for immediate assistance.
-      3.  Medication Reminders: Displays medication reminders set by guardians or caretakers.
+      1.  Emergency SOS: Allows senior citizens to trigger an emergency alert signal with a single click, notifying 
+                         predefined emergency contacts about their distress situation..
+      2.  Emergency Contacts: Provides quick access to a list of emergency contacts, enabling senior citizens to easily 
+                              reach out for help in case of emergencies.
+      3.  Medication Reminders: Displays a list of medication reminders set by guardians or caretakers, helping senior 
+                                citizens manage their medication schedules effectively.
 
 
  For Guardians or Caretakers:
 
-      1. Schedule Appointment: Allows scheduling medical appointments for senior citizens.
-      2. Update Contacts: Enables adding or deleting emergency contacts for senior citizens.
-      3. Update Medication Reminders: Allows setting or updating medication reminders for senior citizens.
+      1. Schedule Appointment: Allows guardians or caretakers to schedule medical appointments for senior citizens, ensuring 
+                               timely access to healthcare services.
+      2. Update Contacts: Enables guardians or caretakers to add, edit, or remove emergency contacts for senior citizens, 
+                          ensuring accurate and up-to-date contact information.
+      3. Update Medication Reminders: Provides the ability for guardians or caretakers to set, modify, or delete medication 
+                           reminders for senior citizens, helping them adhere to prescribed medication regimens.
 
 USER INTERFACE - https://www.figma.com/file/eQ8LYNrClYcC3vSsMOE0uM/SaharaApp?type=design&node-id=0%3A1&mode=design&t=rkLBoaHeiJqO5tFU-1
 
